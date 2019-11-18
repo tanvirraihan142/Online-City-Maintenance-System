@@ -1,0 +1,83 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h3 class="white-important">
+        {{  tag_line }}
+    </h3>
+    <form enctype="multipart/form-data" method="POST" class="col-12 col-md-12 no-padding pr-3 pr-md-0">
+        {% csrf_token %}
+<!--        <fieldset class="form-group">-->
+<!--            {{ form | crispy }}-->
+<!--        </fieldset>-->
+
+
+    <div class="form-row">
+      <div class="form-group col-md-12 mb-0">
+        {{ form.catogery|as_crispy_field }}
+      </div>
+    </div>
+    <hr>
+
+    {% if form.catogery ==  "1" %}
+    <div class="form-row">
+      <div class="form-group col-md-6 mb-0">
+        {{ form.number_plate|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-2 mb-0">
+        {{ form.make|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-2 mb-0">
+        {{ form.model|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-2 mb-0">
+        {{ form.color|as_crispy_field }}
+      </div>
+    </div>
+    <hr>
+    {% else %}
+    {% endif %}
+
+    <div class="form-row">
+        <div class="form-group col-md-12 mb-0 ">
+        {{ form.content|as_crispy_field }}
+        </div>
+    </div>
+    <hr>
+
+    <div class="form-row">
+      <div class="form-group col-md-6 mb-0">
+        {{ form.street|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-2 mb-0">
+        {{ form.city|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-2 mb-0">
+        {{ form.state|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-2 mb-0">
+        {{ form.zipcode|as_crispy_field }}
+      </div>
+    </div>
+    <hr>
+
+    <div>
+        <iframe width="100%" height="600" frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?q=Miami, USA&amp;key=AIzaSyAdKFs0Z7AZdCPFdM27HG4U7X1AMHdFeMk">
+        </iframe>
+
+    </div>
+    <hr>
+
+    <div class="form-row">
+        <div class="form-group col-md-12 mb-0 ">
+        {{ form.image|as_crispy_field }}
+        </div>
+    </div>
+    <hr>
+
+  <div class="form-group">
+     <button class="btn btn-outline-primary" type="submit">Submit changes</button>
+  </div>
+    </form>
+{% endblock content %}
+

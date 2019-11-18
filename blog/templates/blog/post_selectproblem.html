@@ -1,0 +1,271 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block content %}
+
+
+
+  <!-- Header -->
+  <header class="bg-primary py-5 mb-5">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-12">
+          <h1 class="display-4 text-white mt-5 mb-2">Online City Maintenance System</h1>
+          <p class="lead mb-5 text-white-50">Maintenance software for city asset management has been unnecessarily complicated for far too long. We decided to put an end to that. Our maintenance software combines ease-of-use with enterprise functionality. The software is fully loaded with features, but is also intuitive and customizable. The result is maintenance software that makes your job easier while driving productivity and improving efficiency. It takes less time to learn and comes with embedded instructional videos so you’re never more than a click away from support if you get stuck.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-8 mb-5">
+        <h2>What We Do</h2>
+        <hr>
+        <p>Citizen Service Representatives use a computer system that allows them to accept, manage, route and track citizen service requests to the appropriate department. If residents choose to use the online form instead of speaking to a representative, the information they enter into the secure form will automatically generate a service request in the computer system.</p>
+        <p>Stay informed on the status of your online request. Citizens can choose to receive updates via email on the status of their request, just by checking a box on the form and providing their email address!</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'post-create' %}">Report a Problem Form &raquo;</a>
+      </div>
+      <div class="col-md-4 mb-5">
+        <h2>Contact Us</h2>
+        <hr>
+        <address>
+          <strong>OCMS</strong>
+          <br>Rajender, Paryoush, Tanvir
+          <br>11200 SW 107th Ave
+          <br>Miami, Florida, 33199
+          <br>
+        </address>
+        <address>
+          <abbr title="Phone">P:</abbr>
+          (123) 456-7890
+          <br>
+          <abbr title="Email">E:</abbr>
+          <a href="mailto:#">rkumar@fiu.edu</a>
+        </address>
+      </div>
+    </div>
+    <!-- /.row1 -->
+
+    <div class="row">
+      <div class="col-md-3 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'images/trees.png' %}" alt="">
+          <div class="card-body ">
+            <h4 class="card-title centeruppercase">Trees</h4>
+            <p class="card-text">Select this if you find any problem related to trees in the city.</p>
+          </div>
+          <div class="card-footer centeruppercase">
+            <a href="{% url 'post-create' %}" data-select="trees" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'images/abandon_vehicle.png' %}" alt="">
+          <div class="card-body">
+            <h4 class="card-title centeruppercase">Abandon Vehicle</h4>
+            <p class="card-text"  >Select this if you find any abandon vehicles in the city.</p>
+          </div>
+          <div class="card-footer centeruppercase">
+            <a href="{% url 'post-create' %}" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'images/parking.png' %}" alt="">
+          <div class="card-body">
+            <h4 class="card-title centeruppercase">Parking</h4>
+            <p class="card-text">Select this if you see there is any problem related to parking in the city.</p>
+          </div>
+          <div class="card-footer centeruppercase">
+            <a href="{% url 'post-create' %}" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'images/trash_recycling.png' %}" alt="">
+          <div class="card-body">
+            <h4 class="card-title centeruppercase">trash recycling</h4>
+            <p class="card-text">Select this if you see there is any problem related to trash recycling in the city.</p>
+          </div>
+          <div class="card-footer centeruppercase">
+            <a href="{% url 'post-create' %}" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row2 -->
+
+
+    <div class="row">
+      <div class="col-md-3 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'images/city_recreation.png' %}" alt="">
+          <div class="card-body ">
+            <h4 class="card-title centeruppercase">city recreation</h4>
+            <p class="card-text">Select this if you find any problem related to city recreation in the city.</p>
+          </div>
+          <div class="card-footer centeruppercase">
+            <a href="{% url 'post-create' %}" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'images/code_enforcement.png' %}" alt="">
+          <div class="card-body">
+            <h4 class="card-title centeruppercase">code enforcement</h4>
+            <p class="card-text">Select this if you find any code_enforcement in the city.</p>
+          </div>
+          <div class="card-footer centeruppercase">
+            <a href="{% url 'post-create' %}" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'images/general_park_maintenance.png' %}" alt="">
+          <div class="card-body">
+            <h4 class="card-title centeruppercase">general park maintenance</h4>
+            <p class="card-text">Select this if you see there is any problem related to general park maintenance in the city.</p>
+          </div>
+          <div class="card-footer centeruppercase">
+            <a href="{% url 'post-create' %}" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+            <div class="col-md-3 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'images/traffic_signal.png' %}" alt="">
+          <div class="card-body">
+            <h4 class="card-title centeruppercase">traffic signal</h4>
+            <p class="card-text">Select this if you find any  traffic signal in the city.</p>
+          </div>
+          <div class="card-footer centeruppercase">
+            <a href="{% url 'post-create' %}" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row3 -->
+
+
+    <div class="row">
+      <div class="col-md-3 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'images/graffiti_removal.png' %}" alt="">
+          <div class="card-body ">
+            <h4 class="card-title centeruppercase">graffiti removal</h4>
+            <p class="card-text">Select this if you find any problem related to graffiti removal in the city.</p>
+          </div>
+          <div class="card-footer centeruppercase">
+            <a href="{% url 'post-create' %}" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'images/hiking_trails.png' %}" alt="">
+          <div class="card-body">
+            <h4 class="card-title centeruppercase">hiking trails</h4>
+            <p class="card-text">Select this if you find any hiking trails in the city.</p>
+          </div>
+          <div class="card-footer centeruppercase">
+            <a href="{% url 'post-create' %}" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'images/landscape_zones.png' %}" alt="">
+          <div class="card-body">
+            <h4 class="card-title centeruppercase">landscape zones</h4>
+            <p class="card-text">Select this if you see there is any problem related to landscape zones in the city.</p>
+          </div>
+          <div class="card-footer centeruppercase">
+            <a href="{% url 'post-create' %}" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'images/street_sweeping.png' %}" alt="">
+          <div class="card-body ">
+            <h4 class="card-title centeruppercase">street sweeping</h4>
+            <p class="card-text">Select this if you find any problem related to street sweeping in the city.</p>
+          </div>
+          <div class="card-footer centeruppercase">
+            <a href="{% url 'post-create' %}" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row4 -->
+
+
+    <div class="row">
+      <div class="col-md-3 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'images/request_an_inspection.png' %}" alt="">
+          <div class="card-body ">
+            <h4 class="card-title centeruppercase">request An Inspection</h4>
+            <p class="card-text">Select this if you find any problem related to inspection in the city.</p>
+          </div>
+          <div class="card-footer centeruppercase">
+            <a href="{% url 'post-create' %}" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'images/street_light_outage.png' %}" alt="">
+          <div class="card-body">
+            <h4 class="card-title centeruppercase">street light outage</h4>
+            <p class="card-text">Select this if you find any  street light outage in the city.</p>
+          </div>
+          <div class="card-footer centeruppercase">
+            <a href="{% url 'post-create' %}" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'images/street_sidewalk_right_of_way_maintenance.png' %}" alt="">
+          <div class="card-body">
+            <h4 class="card-title centeruppercase">street and sidewalk right of way maintenance</h4>
+            <p class="card-text">Select this if you see there is any problem related to street and sidewalk right of way maintenance in the city.</p>
+          </div>
+          <div class="card-footer centeruppercase">
+            <a href="{% url 'post-create' %}" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+            <div class="col-md-3 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'images/request_an_inspection.png' %}" alt="">
+          <div class="card-body ">
+            <h4 class="card-title centeruppercase">Others</h4>
+            <p class="card-text">Select this if you find any problem which is not belong to any of above category.</p>
+          </div>
+          <div class="card-footer centeruppercase">
+            <a href="{% url 'post-create' %}" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row 5-->
+
+    <!-- /.row -->
+
+
+  </div>
+  <!-- /.container -->
+
+<script src="problem-form.js"></script>
+
+{% endblock content %}
